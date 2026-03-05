@@ -1830,5 +1830,75 @@
         ></div>
       </div>
     </div>
+    <div class="chat-container">
+        <button class="chat-button" id="chat-button" aria-label="Open chat">
+          <img src="./images/logo/chat-icon.svg" alt="" class="chat-icon" />
+          <span class="chat-badge">1</span>
+        </button>
+        <div class="chat-window" id="chat-window">
+          <div class="chat-header">
+            <div class="chat-header-brand">
+              <img src="./images/logo/logo-1.svg" alt="Skinamouré" class="chat-header-logo" />
+              <div class="chat-header-title">
+                <span class="chat-header-name">Skinamouré</span>
+                <span class="chat-header-status">Online now</span>
+              </div>
+            </div>
+            <button class="chat-close-button" id="chat-close-button" aria-label="Close chat">
+              &times;
+            </button>
+          </div>
+          <div class="chat-body">
+            <div class="chat-message-container">
+              <img src="./images/logo/logo-1.svg" alt="Skinamouré" class="chat-message-logo" />
+              <div class="chat-message">
+                Hello! 👋 Welcome to Skinamouré. How can I help you today?
+              </div>
+            </div>
+            <div class="chat-quick-actions">
+              <span class="chat-quick-actions-title">Quick actions:</span>
+              <div class="chat-quick-actions-grid">
+                <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
+                  <img src="./images/logo/calendar.svg" alt="" class="chat-quick-action-icon" />
+                  Book Appointment
+                </button>
+                <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
+                  <img src="./images/logo/question.svg" alt="" class="chat-quick-action-icon scale-170" />
+                  Ask a Question
+                </button>
+                <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
+                  <img src="./images/logo/price.svg" alt="" class="chat-quick-action-icon" />
+                  View Pricing
+                </button>
+                <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
+                  <img src="./images/logo/directions.svg" alt="" class="chat-quick-action-icon" />
+                  Get Directions
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <input type="text" class="chat-input" placeholder="Type your message..." />
+            <button class="chat-send-button" aria-label="Send message">
+              <img src="./images/logo/send.svg" alt="" class="chat-send-icon" />
+            </button>
+          </div>
+        </div>
+      </div>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const chatButton = document.getElementById('chat-button');
+      const chatWindow = document.getElementById('chat-window');
+      const chatCloseButton = document.getElementById('chat-close-button');
+
+      chatButton.addEventListener('click', () => {
+        chatWindow.classList.toggle('open');
+      });
+
+      chatCloseButton.addEventListener('click', () => {
+        chatWindow.classList.remove('open');
+      });
+    });
+  </script>
 </html>
