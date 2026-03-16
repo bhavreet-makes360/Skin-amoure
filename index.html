@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./images//logo/logo-1.svg"
+      href="./assets/images/logo/logo-1.svg"
       type="image/x-icon"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="./assets/css/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Skinamouré</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <style>
+      .aspect-hero { aspect-ratio: 440/961; }
+      @media (min-width: 768px) { .aspect-hero { aspect-ratio: 1512/982; } }
+      .active-scale-95:active { transform: scale(0.95); transition: transform 0.3s ease; }
+    </style>
   </head>
   <body class="w-full bg-[#e3dec8]">
     <!-- section 1 -->
@@ -36,112 +42,52 @@
       </div>
     </header>
 
-    <section
-      class="relative w-full aspect-[440/961] md:aspect-[1512/982] overflow-hidden"
-    >
+    <section class="position-relative w-100 overflow-hidden aspect-hero">
       <img
-        src="./images/landing page/Section-1-hero-bg.png"
-        class="absolute inset-0 -z-1 w-full h-full object-cover object-[50%_50%] md:object-[0%_70%]"
+        src="./assets/images/landing-page/Section-1-hero-bg.png"
+        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1"
+        style="object-position: 50% 50% ;"
       />
 
-      <div class="hero-content">
-          <h1 class="hero-heading tracking-wider">Honest science. Harmonious <br>skin.</h1>
-          <p class="hero-body">
+      <!-- Custom styling for media query object position if needed in style.css or inline -->
+      <style>
+        @media (min-width: 768px) {
+          .object-fit-cover { object-position: 0% 70% !important; }
+        }
+      </style>
+
+      <div class="container-fluid h-100 d-flex align-items-center">
+        <div class="hero-content ps-md-5">
+          <h1 class="hero-heading display-1 text-white">Honest science. Harmonious <br class="d-none d-md-block">skin.</h1>
+          <p class="hero-body lead text-white opacity-75 mb-4">
             We believe in transparent communication and realistic expectations. Your trust is sacred to us, and we honor it with truthful guidance—never overpromising, always delivering.
           </p>
 
-          <div class="hero-actions py-8 ">
-            <a class="btn btn-primary" href="#contact">Book Consultation</a>
-            <a class="btn btn-secondary" href="#contact">
-              <img class="btn-icon" src="./images/logo/icon-whatsapp.svg" alt="" aria-hidden="true" />
-              WhatsApp Us
+          <div class="hero-actions py-4">
+            <a class="d-inline-block active-scale-95" href="#contact"> 
+              <img src="./assets/images/landing-page/Button.svg" alt="Book Consultation" class="img-fluid" />
             </a>
           </div>
 
-          <!-- line -->
-          <div class="w-full h-[1px] bg-white/30 "></div>
+          <!-- Divider -->
+          <div class="w-100 border-top border-white opacity-25 my-4" style="max-width: 800px;"></div>
 
-          <div class="hero-stats mt-10" role="list" aria-label="Key stats">
-            <div class="hero-stat" role="listitem">
-              <div class="hero-stat-number">15+</div>
-              <div class="hero-stat-label">Years Experience</div>
+          <div class="hero-stats mt-4 d-flex flex-wrap gap-4 text-white" role="list" aria-label="Key stats">
+            <div class="hero-stat me-4" role="listitem">
+              <div class="hero-stat-number h2 fw-bold mb-0">25+</div>
+              <div class="hero-stat-label small text-uppercase opacity-75">Years Experience</div>
+            </div>
+            <div class="hero-stat me-4" role="listitem">
+              <div class="hero-stat-number h2 fw-bold mb-0">5000+</div>
+              <div class="hero-stat-label small text-uppercase opacity-75">Happy Patients</div>
             </div>
             <div class="hero-stat" role="listitem">
-              <div class="hero-stat-number">5000+</div>
-              <div class="hero-stat-label">Happy Patients</div>
-            </div>
-            <div class="hero-stat" role="listitem">
-              <div class="hero-stat-number">98%</div>
-              <div class="hero-stat-label">Satisfaction Rate</div>
+              <div class="hero-stat-number h2 fw-bold mb-0">98%</div>
+              <div class="hero-stat-label small text-uppercase opacity-75">Satisfaction Rate</div>
             </div>
           </div>
-
-          
         </div>
-
-      <!-- <div class="max-w-[1200px] w-full flex flex-col gap-8 md:gap-12">
-        <div class="max-w-[800px]">
-          <h1
-            class="font-normal text-5xl md:text-[96px] leading-tight md:leading-[110px] text-white tracking-tight"
-          >
-            Honest science.<br />
-            Harmonious skin.
-          </h1>
-        </div>
-
-        <div class="max-w-[580px]">
-          <p
-            class="font-normal text-base md:text-[18px] leading-relaxed text-white/90"
-          >
-            We believe in transparent communication and realistic expectations.
-            Your trust is sacred to us, and we honor it with truthful
-            guidance—never overpromising, always delivering.
-          </p>
-        </div>
-
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-white/30 max-w-[800px]"
-        >
-          <div class="flex flex-col gap-1">
-            <span class="font-bold text-3xl md:text-4xl text-white">15+</span>
-            <span class="text-sm uppercase tracking-wider text-white/70"
-              >Years Experience</span
-            >
-          </div>
-          <div class="flex flex-col gap-1">
-            <span class="font-bold text-3xl md:text-4xl text-white">5000+</span>
-            <span class="text-sm uppercase tracking-wider text-white/70"
-              >Happy Patients</span
-            >
-          </div>
-          <div class="flex flex-col gap-1">
-            <span class="font-bold text-3xl md:text-4xl text-white">98%</span>
-            <span class="text-sm uppercase tracking-wider text-white/70"
-              >Satisfaction Rate</span
-            >
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-4 mt-4">
-          <a
-            href="#"
-            class="px-8 py-4 bg-[#4c5d4b] text-white rounded-full font-medium hover:bg-[#3d4a3c] transition-all text-center min-w-[200px]"
-          >
-            Book Consultation
-          </a>
-          <a
-            href="#"
-            class="px-8 py-4 bg-white text-[#4c5d4b] rounded-full font-medium flex items-center justify-center gap-3 hover:bg-gray-100 transition-all min-w-[200px]"
-          >
-            <span>WhatsApp Us</span>
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path
-                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.448-1.271.607-1.445.159-.175.347-.218.463-.218.116 0 .231.001.332.005.109.004.258-.041.405.314.159.386.542 1.32.588 1.412.048.093.08.202.017.327-.063.125-.094.202-.188.312-.093.109-.196.245-.28.329-.093.092-.19.192-.081.38.109.187.485.799 1.042 1.294.718.639 1.32.837 1.508.929.188.093.298.077.408-.05.109-.126.477-.554.607-.744.129-.19.259-.159.434-.093.174.067 1.1.519 1.287.612.188.093.312.139.358.217.046.079.046.452-.098.857z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div> -->
+      </div>
     </section>
 
     <!-- <div class="w-[767.9962768554688px] h-[780.8297119140625px]">
@@ -224,7 +170,7 @@
         </div>
       </div> -->
 
-    <div class="hidden">
+    <div class="visually-hidden">
       <div class="w-[1355.917236328125px] h-48">
         <div
           class="h-[158.89654541015625px] w-[1355.917236328125px] flex flex-col gap-[21.186206817626953px]"
@@ -1830,15 +1776,15 @@
         ></div>
       </div>
     </div>
-    <div class="chat-container">
+    <!-- <div class="chat-container">
         <button class="chat-button" id="chat-button" aria-label="Open chat">
-          <img src="./images/logo/chat-icon.svg" alt="" class="chat-icon" />
+          <img src="./assets/images/icons/chat-icon.svg" alt="" class="chat-icon" />
           <span class="chat-badge">1</span>
         </button>
         <div class="chat-window" id="chat-window">
           <div class="chat-header">
             <div class="chat-header-brand">
-              <img src="./images/logo/logo-1.svg" alt="Skinamouré" class="chat-header-logo" />
+              <img src="./assets/images/icons/logo-1.svg" alt="Skinamouré" class="chat-header-logo" />
               <div class="chat-header-title">
                 <span class="chat-header-name">Skinamouré</span>
                 <span class="chat-header-status">Online now</span>
@@ -1850,7 +1796,7 @@
           </div>
           <div class="chat-body">
             <div class="chat-message-container">
-              <img src="./images/logo/logo-1.svg" alt="Skinamouré" class="chat-message-logo" />
+              <img src="./assets/images/icons/logo-1.svg" alt="Skinamouré" class="chat-message-logo" />
               <div class="chat-message">
                 Hello! 👋 Welcome to Skinamouré. How can I help you today?
               </div>
@@ -1859,19 +1805,19 @@
               <span class="chat-quick-actions-title">Quick actions:</span>
               <div class="chat-quick-actions-grid">
                 <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
-                  <img src="./images/logo/calendar.svg" alt="" class="chat-quick-action-icon" />
+                  <img src="./assets/images/icons/calendar.svg" alt="" class="chat-quick-action-icon" />
                   Book Appointment
                 </button>
                 <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
-                  <img src="./images/logo/question.svg" alt="" class="chat-quick-action-icon scale-170" />
+                  <img src="./assets/images/icons/question.svg" alt="" class="chat-quick-action-icon scale-170" />
                   Ask a Question
                 </button>
                 <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
-                  <img src="./images/logo/price.svg" alt="" class="chat-quick-action-icon" />
+                  <img src="./assets/images/icons/price.svg" alt="" class="chat-quick-action-icon" />
                   View Pricing
                 </button>
                 <button class="chat-quick-action transition-all duration-200 hover:border-[#41561a] hover:bg-[#f0f4f0]">
-                  <img src="./images/logo/directions.svg" alt="" class="chat-quick-action-icon" />
+                  <img src="./assets/images/icons/directions.svg" alt="" class="chat-quick-action-icon" />
                   Get Directions
                 </button>
               </div>
@@ -1880,11 +1826,11 @@
           <div class="chat-footer">
             <input type="text" class="chat-input" placeholder="Type your message..." />
             <button class="chat-send-button" aria-label="Send message">
-              <img src="./images/logo/send.svg" alt="" class="chat-send-icon" />
+              <img src="./assets/images/icons/send.svg" alt="" class="chat-send-icon" />
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
   </body>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1892,13 +1838,18 @@
       const chatWindow = document.getElementById('chat-window');
       const chatCloseButton = document.getElementById('chat-close-button');
 
-      chatButton.addEventListener('click', () => {
-        chatWindow.classList.toggle('open');
-      });
+      if (chatButton && chatWindow) {
+        chatButton.addEventListener('click', () => {
+          chatWindow.classList.toggle('open');
+        });
+      }
 
-      chatCloseButton.addEventListener('click', () => {
-        chatWindow.classList.remove('open');
-      });
+      if (chatCloseButton && chatWindow) {
+        chatCloseButton.addEventListener('click', () => {
+          chatWindow.classList.remove('open');
+        });
+      }
     });
   </script>
+  <script src="./assets/css/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 </html>

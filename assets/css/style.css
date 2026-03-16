@@ -97,7 +97,7 @@ p, span {
   width: 56px;
   height: 56px;
   border-radius: 999px;
-  background: url("./images/logo/logo-1.png") center / cover no-repeat;
+  background: url("../images/logo/logo-1.svg") center / cover no-repeat;
  
 }
 
@@ -182,7 +182,7 @@ p, span {
   font-family: var(--font-hero);
   font-size: 96px; /* style_YV91ZL.fontSize */
   font-weight: 300;
-  line-height: 110px;
+  line-height: 120px;
   margin: 2rem 0 24px;
 }
 
@@ -200,10 +200,7 @@ p, span {
   display: flex;
   align-items: center;
   gap: 48px;
-  border: 1.028px solid var(--color-hero-20); /* stroke_C500V1 */
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(2px);
   width: fit-content;
 }
 
@@ -233,7 +230,8 @@ p, span {
   text-decoration: none;
   border-radius: 999px;
   border: 1px solid transparent;
-  height: 58.05px; /* layout_9ZPZP7.height */
+  height: 58px;
+  width: 325px;
   padding: 0 28px;
   display: inline-flex;
   align-items: center;
@@ -248,7 +246,7 @@ p, span {
 
 .btn-primary {
   background: var(--color-olive-79);  /* fill_CNQR4W */
-  border-color: var(--color-olive);   /* stroke_ZKPT7E */
+  border-color: rgba(255, 255, 255, 0.385);   /* stroke_ZKPT7E */
   color: var(--color-hero);
   box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1),
               0px 10px 15px -3px rgba(0, 0, 0, 0.1); /* effect_WUHEDT */
